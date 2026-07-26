@@ -203,6 +203,11 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# Homer local inputs and generated indexes
+.DS_Store
+/.homer/
+/data/*.epub
+
 # Ruff stuff:
 .ruff_cache/
 

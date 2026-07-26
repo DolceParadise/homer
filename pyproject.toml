@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "homer-storyteller"
+version = "0.1.0"
+description = "A local GraphRAG engine for corpus-grounded literary continuations."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "beautifulsoup4>=4.13,<5",
+  "ebooklib>=0.19,<1",
+  "networkx>=3.5,<4",
+  "openai>=2.16,<3",
+  "pydantic>=2.11,<3",
+  "python-dotenv>=1.1,<2",
+  "pymupdf>=1.26,<2",
+  "qdrant-client>=1.15,<2",
+  "sentence-transformers>=5.1,<6",
+  "torch>=2.8,<3",
+  "transformers>=4.51,<5",
+  "typer>=0.16,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4,<9",
+]
+
+[project.scripts]
+homer = "homer.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+  "integration: loads the real local embedding model",
+  "live: calls the Cerebras API",
+]
