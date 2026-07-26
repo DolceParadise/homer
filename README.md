@@ -52,6 +52,17 @@ homer write --corpus sherlock --max-words 1200 \
 The JSON result contains the story and a grounding report identifying the graph
 facts, chapters, and chunks supplied to the writer.
 
+## Web UI
+
+```bash
+homer-web
+```
+
+Open <http://127.0.0.1:8000>. The initial view renders the complete persisted
+graph. Hover a node or relationship to inspect it; after a prompt completes,
+the graph switches to the nodes, relationships, and community summaries used
+to ground that story.
+
 ## Tests
 
 ```bash

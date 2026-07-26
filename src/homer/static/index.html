@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homer — Literary GraphRAG</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="brand"><span class="brand-mark">H</span><span>Homer</span><span class="brand-subtitle">Corpus-grounded storyteller</span></div>
+        <p id="graph-meta">Loading graph…</p>
+      </header>
+      <section class="workspace">
+        <aside class="graph-panel panel">
+          <div class="panel-heading"><div><h1 id="graph-title">Knowledge Graph</h1></div><span id="graph-count" class="count"></span></div>
+          <div id="cy" aria-label="Interactive literary knowledge graph"></div>
+          <div id="graph-tooltip" class="graph-tooltip">Hover a node or relationship to inspect its evidence.</div>
+          <div id="communities" class="communities"></div>
+        </aside>
+        <section class="chat-panel panel">
+          <div id="conversation" class="conversation">
+            <article class="welcome"><h2>What happens next?</h2><p>Ask for a continuation, counterfactual, or an unexplored case. Homer will retrieve the relevant canon before writing.</p><button class="suggestion" data-prompt="What would have happened if Sherlock Holmes had caught Irene Adler?">Try the Irene Adler counterfactual</button></article>
+          </div>
+          <form id="composer" class="composer">
+            <textarea id="prompt" rows="2" maxlength="4000" placeholder="Ask Homer to continue the story…" required></textarea>
+            <button id="send" type="submit" aria-label="Send prompt">↑</button>
+          </form>
+        </section>
+      </section>
+    </main>
+    <template id="message-template"><article class="message"><div class="message-role"></div><div class="message-content"></div></article></template>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
