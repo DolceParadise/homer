@@ -37,6 +37,9 @@ homer-web = "homer.web:run"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+homer = ["static/*.html", "static/*.css", "static/*.js"]
+
 [tool.pytest.ini_options]
 addopts = "-ra"
 testpaths = ["tests"]
