@@ -8,6 +8,8 @@ The current prototype is built around two Sherlock Holmes EPUBs. It keeps the
 graph and Qdrant index local, while using Cerebras for structured extraction,
 community summaries, and story generation.
 
+Demo Video https://www.loom.com/share/f9e9466eaebf41fc96317a7f026ff6b2
+
 ## Repository Overview
 
 ```text
@@ -45,12 +47,11 @@ homer/
 
 ## Getting Started
 
-*Homer* uses the existing `nli` pyenv environment and requires Python 3.11 or
+*Homer* uses a python environment and requires Python 3.11 or
 3.12.
 
 ```bash
 cd homer
-pyenv activate nli
 python -m pip install -e ".[dev]"
 ```
 
@@ -150,7 +151,7 @@ structure. *Homer* combines both representations:
 - Community summaries provide a compact view of larger subplots and story
   clusters.
 - Qdrant still retrieves stylistically and semantically similar passages, so
-  the writer receives useful prose context as well as structured canon.
+  the writer receives useful prose context as well as a structured canon.
 - The final grounding report makes the context auditable: users can see which
   chapters, chunks, graph facts, and communities influenced the output.
 
